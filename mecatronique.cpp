@@ -29,6 +29,7 @@ pieceMecatronique::pieceMecatronique(string referance, double prix, DATE dateFab
     Setcourant(courant);
     SetTension(tension);
     this->compatibilite=compatibilite;
+  
 }
 
 pieceMecatronique::~pieceMecatronique(){

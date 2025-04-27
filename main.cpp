@@ -162,47 +162,75 @@ int main(){
   
     cout<<"--------classe Liquide-------------------"<<endl;
     liquide l1,l2,l3;
+    double rem;
     cin>>l1;
     cout<<l1;
+
+    cout<<"------------------Affectation = ----------------"<<endl;
     l3=l1;
     cout<<l3;
     
     cin>>l2;
     cout<<l1;
     cout<<l2;
+    cout<<"-----Operation ===--------------------"<<endl;
     if(l1==l2){
         cout<<"C est le meme liquide"<<endl;
     }
     else{
         cout<<"Deux liquide differents"<<endl;
     }
+    cout<<"------Fonction Remise----------"<<endl;
+    cout<<"le pourcentage de la remise est : "<<endl;
+    cin>>rem;
+    l1.Remise(rem);
+    cout<<l1;
+
         
 
     cout<<"--------classe pieceMecanique-------------------"<<endl;
     pieceMecanique pm1,pm2;
+    double remC;
+    cout<<"-------Saisie des pieces------------"<<endl;
     cin>>pm1;
     cin>>pm2;
+    cout<<"-------affichage des pieces---------"<<endl;
     cout<<pm1;
     cout<<pm2;
+    cout<<"-------Fonction Remise--------"<<endl;
+    cout<<"Donner le pourcentage de la remise :"<<endl;
+    cin>>remC;
+    pm1.Remise(remC);
+    cout<<"------Apres Remise----------"<<endl;
+    cout<<pm1;
+
   
 
 
     cout<<"---------classe pieceElectronique------------"<<endl;
     pieceElectronique* p;
     pieceElectronique* pi2;
+    pieceElectronique* pe1;
     pieceElectronique pe;
     cin>>pe;
-    p= new pieceElectronique("PE127", 59.99, d2, 28, 8.0, 1.0, {"C", "D"},5);
-    pi2= new pieceElectronique("PE129", 69.99, d2, 28, 8.0, 1.0, {"E", "F"},5);
-    pe.afficherPiece();
+    p= new pieceElectronique("PE127", 59.99, d2, 28, 8.0, 1.0, {"metal", "bois"},5);
+    pi2= new pieceElectronique("PE129", 69.99, d2, 28, 8.0, 1.0, {"Silicium", "Or"},5);
+    pe1= new pieceElectronique("PE128", 89.99, d2, 28, 8.0, 1.0, {"Aluminium", "Céramique"},5);
+    cout<<pe;
     pe.ajouterPiece(p);
     pe.ajouterPiece(pi2);
+    pe.ajouterPiece(pe1);
     pe.afficherEnsemble();
     
 
     cout<<"-----------classe pieceMecatronique----------"<<endl;
     pieceMecatronique* pme;
     pieceMecatronique* pMC;
+    pieceMecatronique pmcA;
+    cout<<"-----Saisie de la piece---------"<<endl;
+    cin>>pmcA;
+    cout<<"------Affichage de la piece-------------"<<endl;
+    cout<<pmcA;
     pme = new pieceMecatronique("PM004", 299.99, {15, 4, 2023}, 36, 12.0, 3.0, {"Renault Clio", "Peugeot 208", "Volkswagen Golf"},5, "Haute", "Capteur", "Aluminium");
     pMC= new pieceMecatronique("PM001", 199.99, {15, 4, 2023}, 36, 12.0, 3.0, {"Renault Clio", "Peugeot 208", "Volkswagen Golf"},5, "Haute", "Capteur", "Aluminium");
     pMC->afficherMec();
