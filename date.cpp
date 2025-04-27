@@ -72,9 +72,11 @@ DATE DATE::comp(DATE d){
 }
 
 istream& operator>>(istream& in,DATE& d){
-    cout<<"donner la date "<<endl;
+    cout<<"Donner le jour :"<<endl;
     in>>d.jour;
+    cout<<"Donner le mois :"<<endl;
     in>>d.mois;
+    cout<<"Donner l' annee :"<<endl;
     in>>d.annee;
     return in;
 }

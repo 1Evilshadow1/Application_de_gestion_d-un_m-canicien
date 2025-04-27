@@ -14,7 +14,7 @@ pieceMecanique::pieceMecanique(string referance, double prix, DATE dateFabricati
 
 }
 pieceMecanique::~pieceMecanique(){
-    cout<<"destruction de la piece mecanique"<<endl;
+    //cout<<"destruction de la piece mecanique"<<endl;
 }
 
 void pieceMecanique::afficherME(){
@@ -45,6 +45,8 @@ ostream& operator<<(ostream& out , pieceMecanique& pm ){
 
 }
 
-
+void pieceMecanique::Remise(float p){
+    prix=prix-(prix*p/100);
+}
 
 

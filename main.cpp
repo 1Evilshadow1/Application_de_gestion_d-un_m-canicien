@@ -18,9 +18,13 @@ using namespace std;
 #include"electronique.h"
 #include"mecatronique.h"
 #include"facture.h"
+#include"rendezVous.h"
+#include"reparation.h"
 
 
 int main(){
+    
+    
     cout<<"----------------------------------------------------Partie de Mohamed Aziz Taalouch------------------------------------------:"<<endl;
 
     // test de la classe date
@@ -32,7 +36,7 @@ int main(){
     d4.afficher();                       
     d3=d4;                          
     cout << "-------LA METHODE COUT-----------" << endl;
-    cout<<"d3: \n"<<d3<<endl;               
+    cout<<"d3: "<<d3<<endl;               
     cout << "-------LA METHODE CIN--------" << endl;
     cin>>d5;
     cout << "d5:"<<d5 << endl;
@@ -49,8 +53,8 @@ int main(){
     cout << "-------LA METHODE AFFICHER--------" << endl;
     v2.afficher();    
     cout<<"---------LA METHODE getImmatriculation()---------------"<<endl;             
-    v2.getImmatriculation();                                                             
-    cout<<"---------LA METHODE modifierKilomertrage<<----------------"<<endl;             
+    cout<<v2.getImmatriculation()<<endl;                                                           
+    cout<<"---------LA METHODE modifierKilomertrage----------------"<<endl;             
     v2.modifierKilometrage(15000);                                                         
     v2.afficher();                                                                       
     v1=v2;                                                                                 
@@ -60,8 +64,15 @@ int main(){
     cin>>v1;
     cout<<v1<<endl;                                                       
     
+    cout<<"-------------------- Operateur de Comparaison == Classe Vehicule -------------------"<<endl;
+    vehicule v111("Toyota", "Corolla", DATE(1, 2, 2023), 10000, "1234");
+    vehicule v222("Toyota", "Corolla", DATE(1, 2, 2023), 10000, "22");
 
-
+    if (v111 == v222) {
+        cout << "comme comme" << endl;
+    } else {
+        cout << "different" << endl;
+    }
 
     //test de la classe Client/personne 
     cout<<"-------------------- test de la classe Client -------------------"<<endl;
@@ -102,7 +113,11 @@ int main(){
     om2.augmentationSalaire();
     cout<<"---------LA METHODE augmentationsalaire---------------"<<endl;              
     cout<<om2<<endl;
-
+    cout<<"---------methode cin---------------"<<endl;              
+    OuvrierMecanicien om3;
+    cin>>om3;
+    cout<<"---------methode cout---------------"<<endl;
+    cout<<om3<<endl;
     
 
    //test de la classe gestionnaire 
@@ -112,6 +127,11 @@ int main(){
     g1.augmentationSalaire();
     cout<<"---------LA METHODE augmentationsalaire---------------"<<endl;
     cout<<g1<<endl;
+    cout<<"---------methode cin---------------"<<endl;
+    Gestionnaire g2;
+    cin>>g2;
+    cout<<"---------methode cout---------------"<<endl;
+    cout<<g2<<endl;
     
     //test de la classe ClientEmployee
     cout<<"-------------------- test de la classe ClientEmployee -------------------"<<endl;
@@ -130,70 +150,100 @@ int main(){
     ce1.ajouterAvantage("Reduction sur les pieces de rechange");
     cout<<"---------LA METHODE ajouteravantages---------------"<<endl;
     ce1.afficherAvantages();
-    
-    cout<<"-------------------- Operateur de Comparaison == Classe Vehicule -------------------"<<endl;
-    vehicule v111("Toyota", "Corolla", DATE(1, 2, 2023), 10000, "1234");
-    vehicule v222("Toyota", "Corolla", DATE(1, 2, 2023), 10000, "22");
+    ClientEmployee ce5;
+    cout << "Entrez les informations du client employe :" << endl;
+    cin >> ce5;
+    cout << "Informations du client employe saisi :" << endl;
+    cout << ce5;
 
-    if (v111 == v222) {
-        cout << "comme comme" << endl;
-    } else {
-        cout << "different" << endl;
-    }
 
+
+    cout<<"-------------------- Partie Fichier + Exception Classe Client -------------------"<<endl;
     Client c11("Taalouch","Aziz",29212588,14432289,"aziztaalouch@gmail.com",1,"particulier",DATE(1, 1, 2020),3,vector<vehicule*>{
         new vehicule("Renault", "Clio", DATE(1, 1, 2021), 5000, "4321"),
         new vehicule("Peugeot", "208", DATE(1, 6, 2021), 8000, "5678"),
         new vehicule("Peugeot", "expert", DATE(1, 6, 2025), 900000, "141")
     });
-    cout<<"-------------------- Partie Fichier + Exception Classe Client -------------------"<<endl;
     c11.creerFichier("clients.txt");
     c11.enregistrerFichier("clients.txt");
     c11.afficherFichier("clients.txt");
-/*
+    
+ 
     cout<<"----------------------------------------------------Partie de Aziz Ben Othmane------------------------------------------:"<<endl;
     DATE d1,d2;
     int t,com;
-   
-    cout<<"--------classe produit-------------------"<<endl;
-    produit p1,p2;
-    cin>>p1;
-    cin>>p2;
-    com=produit::getCompteur();
-    cout<<"Nbr de produit est "<<com<<endl;
-    cout<<p1;
-    cout<<p2;
-
+  
     cout<<"--------classe Liquide-------------------"<<endl;
-    liquide l1,l2;
+    liquide l1,l2,l3;
+    double rem;
     cin>>l1;
+    cout<<l1;
+
+    cout<<"------------------Affectation = ----------------"<<endl;
+    l3=l1;
+    cout<<l3;
+    
     cin>>l2;
     cout<<l1;
     cout<<l2;
+    cout<<"-----Operation ===--------------------"<<endl;
+    if(l1==l2){
+        cout<<"C est le meme liquide"<<endl;
+    }
+    else{
+        cout<<"Deux liquide differents"<<endl;
+    }
+    cout<<"------Fonction Remise----------"<<endl;
+    cout<<"le pourcentage de la remise est : "<<endl;
+    cin>>rem;
+    l1.Remise(rem);
+    cout<<l1;
+
+        
 
     cout<<"--------classe pieceMecanique-------------------"<<endl;
     pieceMecanique pm1,pm2;
+    double remC;
+    cout<<"-------Saisie des pieces------------"<<endl;
     cin>>pm1;
     cin>>pm2;
+    cout<<"-------affichage des pieces---------"<<endl;
     cout<<pm1;
     cout<<pm2;
+    cout<<"-------Fonction Remise--------"<<endl;
+    cout<<"Donner le pourcentage de la remise :"<<endl;
+    cin>>remC;
+    pm1.Remise(remC);
+    cout<<"------Apres Remise----------"<<endl;
+    cout<<pm1;
+
+  
 
 
     cout<<"---------classe pieceElectronique------------"<<endl;
     pieceElectronique* p;
     pieceElectronique* pi2;
-    pieceElectronique pe("PE123", 49.99, d1, 24, 5.0, 2.0, {"A", "B"},5);
-    p= new pieceElectronique("PE127", 59.99, d2, 28, 8.0, 1.0, {"C", "D"},5);
-    pi2= new pieceElectronique("PE129", 69.99, d2, 28, 8.0, 1.0, {"E", "F"},5);
-    pe.afficherPiece();
+    pieceElectronique* pe1;
+    pieceElectronique pe;
+    cin>>pe;
+    p= new pieceElectronique("PE127", 59.99, d2, 28, 8.0, 1.0, {"metal", "bois"},5);
+    pi2= new pieceElectronique("PE129", 69.99, d2, 28, 8.0, 1.0, {"Silicium", "Or"},5);
+    pe1= new pieceElectronique("PE128", 89.99, d2, 28, 8.0, 1.0, {"Aluminium", "Céramique"},5);
+    cout<<pe;
     pe.ajouterPiece(p);
     pe.ajouterPiece(pi2);
+    pe.ajouterPiece(pe1);
     pe.afficherEnsemble();
     
 
     cout<<"-----------classe pieceMecatronique----------"<<endl;
     pieceMecatronique* pme;
     pieceMecatronique* pMC;
+    pieceMecatronique pmcA;
+    cout<<"-----Saisie de la piece---------"<<endl;
+    cin>>pmcA;
+    cout<<"------Affichage de la piece-------------"<<endl;
+    cout<<pmcA;
     pme = new pieceMecatronique("PM004", 299.99, {15, 4, 2023}, 36, 12.0, 3.0, {"Renault Clio", "Peugeot 208", "Volkswagen Golf"},5, "Haute", "Capteur", "Aluminium");
     pMC= new pieceMecatronique("PM001", 199.99, {15, 4, 2023}, 36, 12.0, 3.0, {"Renault Clio", "Peugeot 208", "Volkswagen Golf"},5, "Haute", "Capteur", "Aluminium");
     pMC->afficherMec();
@@ -205,38 +255,55 @@ int main(){
     cout<<"---------classe facture-------------"<<endl;
 
     facture f,f1,f2;
-    
+    cout<<"-----Saisie de la facture---------"<<endl;
     cin>>f;
-    cout<<f;
+    cout<<"------cout de la facture-------------"<<endl;
+    cout<<f; 
+    cout<<"---------Saisie de la facture 1----------------"<<endl;
     cin>>f1;
+    cout<<"------cout de la facture 1-------------"<<endl;
     cout<<f1;
     cout<<"donner le taux de Tax"<<endl;
     t=f.calculTax(20);
     cout<<"le Tax est "<<t<<endl;
+    cout<<"---------OPERATEUR +----------------------------"<<endl;
     f2=f+f1;
     cout<<f2;
 
     delete pme,p,pi2,pMC;
     
-    cout<<"-----Partie Fichier------"<<endl;
-    cout<<"Classe Prouit"<<endl;
-    p1.creerFichier("produit.txt");
-    p1.enregistrerFichier("produit.txt");
-    p1.afficherFichier("produit.txt");
-
+    cout<<"--------Fichier Liquide-----------"<<endl;
     
     cout<<"Classe liquide"<<endl;
     l1.creerFichier("liquide.txt");
     l1.enregisterFichierLiquide("liquide.txt");
     l1.afficherFichierLiquide("liquide.txt");
    
-*/
-    ClientEmployee ce5;
-    cout << "Entrez les informations du client employe :" << endl;
-    cin >> ce5;
-    cout << "Informations du client employe saisi :" << endl;
-    cout << ce5;
     
+
+   cout<<"--------------------  classe rendezVous -------------------"<<endl;
+   rendezVous r;
+   cin>>r;
+   cout<<r;
+   cout<<"-----------METHODE MODIFIER RV-----------------------"<<endl;
+   r.modifierRV();
+   cout<<"Nouveau RV--------------"<<endl;
+   cout<<r;
+   
+   cout<<"---------------------  classe reparation -------------------"<<endl;
+   reparation r1;
+    cin>>r1;
+    cout<<r1;
+    r1.creerFichier("reparation.txt");
+    r1.enregistrerFichier("reparation.txt");
+    r1.afficherFichier("reparation.txt");
+    
+
+
+
 
     return 0;
 }
+
+//g++ -o main.exe main.cpp personne.cpp date.cpp vehicule.cpp client.cpp employe.cpp ouvriermecanicien.cpp gestionnaire.cpp clientemploye.cpp produit.cpp liquide.cpp mecanique.cpp electronique.cpp mecatronique.cpp facture.cpp rendezVous.cpp reparation.cpp
+//./main.exe

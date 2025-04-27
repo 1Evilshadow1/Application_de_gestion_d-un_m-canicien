@@ -17,10 +17,12 @@ class liquide : public virtual produit{
         string description;
     public:
         liquide(string referance, double prix, DATE dateFabrication, int dureeGarantie, string flammable, float volume, string viscosite, string contenance, string type, string description);
-        void afficherdetails();
         liquide();
+        void  Remise(float) override;
         friend istream& operator>>(istream& in ,liquide& );
         friend ostream& operator<<(ostream& out,liquide&);
+        bool operator==(const liquide& other) const;
+        liquide& operator=(const liquide& v);
         //Fonctions Fichier
         void creerFichier(const string& f);
         void enregisterFichierLiquide(const string& f) const;

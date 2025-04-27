@@ -4,18 +4,28 @@
 #include<string>
 
 
+
+pieceElectronique::pieceElectronique(){
+    nbrP++;
+
+}
 pieceElectronique::pieceElectronique(string referance, double prix, DATE dateFabrication, int dureeGarantie, double tension, double courant, vector<string> compatibilite,int Nbr):produit(referance,prix,dateFabrication,dureeGarantie){
+    this->referance=referance;
+    this->prix=prix;
+    this->dateFabrication=dateFabrication;
+    this->dureeGarantie=dureeGarantie;
     this->tension=tension;
     this->courant=courant;
-    this->compatibilite=compatibilite;
-    this->nbrP=Nbr;
+    MatU={};
+
+    
     
 }
 
 pieceElectronique::pieceElectronique(const  pieceElectronique& other):produit(referance,prix,dateFabrication,dureeGarantie){
     tension=other.tension;
     courant=other.courant;
-    compatibilite=other.compatibilite;
+    MatU=other.MatU;
     nbrP=other.nbrP;
 
 
@@ -42,3 +52,41 @@ void pieceElectronique::afficherPiece(){
     cout<<"courant:"<<courant<<endl;
 
 }
+
+ostream& operator<<(ostream& out,pieceElectronique& pe)  {
+    out<<static_cast<produit&>(pe);
+    out<<"Tension:"<<pe.tension<<endl;
+    out<<"courant:"<<pe.courant<<endl;
+
+    return out ;
+
+}
+
+
+istream& operator>>(istream& in,pieceElectronique& pe){
+    in>>static_cast<produit&>(pe);
+    cout<<"donner la tension "<<endl;
+    in>>pe.tension;
+    cout<<"donner le courant:"<<endl;
+
+    in>>pe.courant;
+    
+    string matUl;
+    
+    while(true){
+        cout<<"Saisir du materiels"<<endl;
+        cout<<"FIN:pour arreter la saisie"<<endl;
+        cin>>matUl;
+        if(matUl=="fin"){break;}
+        pe.MatU.push_back(matUl);
+    }
+        
+    return in;
+
+
+}
+
+void pieceElectronique::Remise(float p){
+    prix=prix-(prix*p/100);
+}
+
