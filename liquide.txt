@@ -1,10 +1,10 @@
-La referance est :f15161
-Le prix est :18
+La referance est :f15152
+Le prix est :20
 La Date de Fabrication est :12/2/2002
-la duree de garantie est :80
+la duree de garantie est :90
 flammable=true
-volume=19
-viscosite=oui
+volume=10
+viscosite=forte
 contenance=eau
 type=eau
-Description:eau
+Description:bien

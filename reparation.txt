@@ -1,25 +1,18 @@
-date:12/2/2002
-client:nom: AZIZ
-prenom: BENOTHMEN
-tel: 2134546
-CIN: 12342424
-email: AZIZ.BENOTHMEN@gmail.Com
-id: 123323
-type: particulier
-date de derniere visite: 12/3/2008
-nombre de vehicules: 1
-vehicule NUMERO : 1
-immatriculation: 152
-marque: Golf
-modele: Golf7
-date d'achat: 12/2/2005
-kilometrage: 129
+date:12/2/2009
+client:nom: BENOTHMEN
+prenom: AZIZ
+tel: 21762308
+CIN: 162725151
+email: aziz.benothmen@gmail.com
+id: 12342
+type: professionnel
+date de derniere visite: 12/2/2007
+nombre de vehicules: 0
 
+vehicule:immatriculation: 524
+marque: Peugeot
+modele: 8
+date d'achat: 12/2/2009
+kilometrage: 198
 
-vehicule:immatriculation: 1332
-marque: Golf
-modele: GOLF7
-date d'achat: 12/2/2003
-kilometrage: 190
-
-description:AAA
+description:AA

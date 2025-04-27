@@ -16,7 +16,7 @@ pieceElectronique::pieceElectronique(string referance, double prix, DATE dateFab
     this->dureeGarantie=dureeGarantie;
     this->tension=tension;
     this->courant=courant;
-    this->compatibilite=compatibilite;
+    MatU={};
 
     
     
@@ -25,7 +25,7 @@ pieceElectronique::pieceElectronique(string referance, double prix, DATE dateFab
 pieceElectronique::pieceElectronique(const  pieceElectronique& other):produit(referance,prix,dateFabrication,dureeGarantie){
     tension=other.tension;
     courant=other.courant;
-    compatibilite=other.compatibilite;
+    MatU=other.MatU;
     nbrP=other.nbrP;
 
 
@@ -68,7 +68,19 @@ istream& operator>>(istream& in,pieceElectronique& pe){
     cout<<"donner la tension "<<endl;
     in>>pe.tension;
     cout<<"donner le courant:"<<endl;
+
     in>>pe.courant;
+    
+    string matUl;
+    
+    while(true){
+        cout<<"Saisir du materiels"<<endl;
+        cout<<"FIN:pour arreter la saisie"<<endl;
+        cin>>matUl;
+        if(matUl=="fin"){break;}
+        pe.MatU.push_back(matUl);
+    }
+        
     return in;
 
 

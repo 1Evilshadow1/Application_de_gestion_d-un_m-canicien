@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include<list>
 #include"produit.h"
 using namespace std;
 #pragma once
@@ -11,7 +12,7 @@ class pieceElectronique : virtual public produit{
     private:
          double tension;
          double courant;
-         vector<string> compatibilite;
+         list<string> MatU;//Materiels Utlisés
          int nbrP;
          vector<pieceElectronique*> ensemble;
          public:
@@ -28,6 +29,6 @@ class pieceElectronique : virtual public produit{
          double getcourant(){return courant;};
          void Setcourant(double courant1){courant=courant1;};
          void SetTension(double tension){this->tension=tension;};
-         void SetComp(vector<string>comp){compatibilite=comp;};
+         void SetComp(list<string>matul){MatU=matul;};
          ~pieceElectronique();
  };

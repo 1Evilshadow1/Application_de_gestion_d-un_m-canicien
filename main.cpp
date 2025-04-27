@@ -184,12 +184,14 @@ int main(){
     cin>>pm2;
     cout<<pm1;
     cout<<pm2;
+  
 
 
     cout<<"---------classe pieceElectronique------------"<<endl;
     pieceElectronique* p;
     pieceElectronique* pi2;
-    pieceElectronique pe("PE123", 49.99, d1, 24, 5.0, 2.0, {"A", "B"},5);
+    pieceElectronique pe;
+    cin>>pe;
     p= new pieceElectronique("PE127", 59.99, d2, 28, 8.0, 1.0, {"C", "D"},5);
     pi2= new pieceElectronique("PE129", 69.99, d2, 28, 8.0, 1.0, {"E", "F"},5);
     pe.afficherPiece();
@@ -257,6 +259,7 @@ int main(){
     r1.creerFichier("reparation.txt");
     r1.enregistrerFichier("reparation.txt");
     r1.afficherFichier("reparation.txt");
+    
 
 
 
