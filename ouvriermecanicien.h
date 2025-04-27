@@ -1,6 +1,7 @@
 #include "employe.h"
 #include "personne.h"
 #include "vehicule.h"
+#pragma once
 
 class OuvrierMecanicien: public Employe{
     private:

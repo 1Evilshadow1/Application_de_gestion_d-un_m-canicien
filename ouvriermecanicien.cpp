@@ -1,5 +1,6 @@
 #include "ouvriermecanicien.h"
 
+
 ///////////ouvrier mecanicien
 
 OuvrierMecanicien::OuvrierMecanicien(string n, string p, int t, int c, string e, int i, double s, DATE d, string s1, vector<vehicule*> v) 

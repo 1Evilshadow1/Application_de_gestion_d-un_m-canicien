@@ -21,6 +21,8 @@ class liquide : public virtual produit{
         void  Remise(float) override;
         friend istream& operator>>(istream& in ,liquide& );
         friend ostream& operator<<(ostream& out,liquide&);
+        bool operator==(const liquide& other) const;
+        liquide& operator=(const liquide& v);
         //Fonctions Fichier
         void creerFichier(const string& f);
         void enregisterFichierLiquide(const string& f) const;

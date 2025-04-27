@@ -7,6 +7,20 @@
 
 pieceMecatronique::pieceMecatronique(){}
 
+pieceMecatronique::pieceMecatronique(  pieceMecatronique& other){
+    referance=other.referance;
+    prix=other.prix;
+    dateFabrication=other.dateFabrication;
+    dureeGarantie=other.dureeGarantie;
+    SetTension(other.gettension());
+    Setcourant(other.getcourant());
+    SetQualite(other.getqualite());
+    compatibilite=other.compatibilite;
+    piece=other.piece;
+
+
+}
+
 pieceMecatronique::pieceMecatronique(string referance, double prix, DATE dateFabrication, int dureeGarantie, double tension, double courant, vector<string> compatibilite,int Nbr, string qualite, string categorie, string materiaux):produit(referance,prix,dateFabrication,dureeGarantie),pieceMecanique(referance,prix,dateFabrication,dureeGarantie,qualite,categorie,materiaux),pieceElectronique(referance,prix,dateFabrication,dureeGarantie,tension,courant,compatibilite,Nbr){
     this->referance=referance;
     this->prix=prix;

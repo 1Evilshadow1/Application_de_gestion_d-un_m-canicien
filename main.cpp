@@ -18,9 +18,12 @@ using namespace std;
 #include"electronique.h"
 #include"mecatronique.h"
 #include"facture.h"
+#include"rendezVous.h"
+#include"reparation.h"
 
 
 int main(){
+    /*
     
     cout<<"----------------------------------------------------Partie de Mohamed Aziz Taalouch------------------------------------------:"<<endl;
 
@@ -152,28 +155,28 @@ int main(){
     c11.enregistrerFichier("clients.txt");
     c11.afficherFichier("clients.txt");
     
-
+ */
     cout<<"----------------------------------------------------Partie de Aziz Ben Othmane------------------------------------------:"<<endl;
     DATE d1,d2;
     int t,com;
-    /*
-   
-    cout<<"--------classe produit-------------------"<<endl;
-    produit p1,p2;
-    cin>>p1;
-    cin>>p2;
-    com=produit::getCompteur();
-    cout<<"Nbr de produit est "<<com<<endl;
-    cout<<p1;
-    cout<<p2;
-    */
-
+  
     cout<<"--------classe Liquide-------------------"<<endl;
-    liquide l1,l2;
+    liquide l1,l2,l3;
     cin>>l1;
+    cout<<l1;
+    l3=l1;
+    cout<<l3;
+    
     cin>>l2;
     cout<<l1;
     cout<<l2;
+    if(l1==l2){
+        cout<<"C est le meme liquide"<<endl;
+    }
+    else{
+        cout<<"Deux liquide differents"<<endl;
+    }
+        
 
     cout<<"--------classe pieceMecanique-------------------"<<endl;
     pieceMecanique pm1,pm2;
@@ -217,18 +220,13 @@ int main(){
     cout<<"donner le taux de Tax"<<endl;
     t=f.calculTax(20);
     cout<<"le Tax est "<<t<<endl;
+    cout<<"---------OPERATEUR +----------------------------"<<endl;
     f2=f+f1;
     cout<<f2;
 
     delete pme,p,pi2,pMC;
-    /*
-    cout<<"-----Partie Fichier------"<<endl;
-    cout<<"Classe Prouit"<<endl;
-    p1.creerFichier("produit.txt");
-    p1.enregistrerFichier("produit.txt");
-    p1.afficherFichier("produit.txt");
-    */
-
+    
+    cout<<"--------Fichier Liquide-----------"<<endl;
     
     cout<<"Classe liquide"<<endl;
     l1.creerFichier("liquide.txt");
@@ -242,6 +240,26 @@ int main(){
     cout << "Informations du client employe saisi :" << endl;
     cout << ce5;
     
+
+   cout<<"--------------------  classe rendezVous -------------------"<<endl;
+   rendezVous r;
+   cin>>r;
+   cout<<r;
+   cout<<"-----------METHODE MODIFIER RV-----------------------"<<endl;
+   r.modifierRV();
+   cout<<"Nouveau RV--------------"<<endl;
+   cout<<r;
+   
+   cout<<"---------------------  classe reparation -------------------"<<endl;
+   reparation r1;
+    cin>>r1;
+    cout<<r1;
+    r1.creerFichier("reparation.txt");
+    r1.enregistrerFichier("reparation.txt");
+    r1.afficherFichier("reparation.txt");
+
+
+
 
     return 0;
 }

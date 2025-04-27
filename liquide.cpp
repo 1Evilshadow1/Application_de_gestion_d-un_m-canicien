@@ -39,6 +39,7 @@ istream& operator>>(istream& in ,liquide& l){
 
 }
 ostream& operator<<(ostream& out, liquide& l){
+    out<<static_cast<produit&>(l);
     out<<"Flammable="<<l.flammable<<endl;
     out<<"volume="<<l.volume<<endl;
     out<<"viscosite="<<l.viscosite<<endl;
@@ -111,6 +112,26 @@ void liquide::Remise(float p){
     prix=prix-(prix*p/100);
 }
        
+bool liquide::operator==(const liquide& other) const{
+    return(referance==other.referance && prix==other.prix 
+        && dateFabrication.getAnnee()==other.dateFabrication.getAnnee() && dateFabrication.getMois()==other.dateFabrication.getMois() && dateFabrication.getJour()==other.dateFabrication.getJour() && 
+        dureeGarantie==other.dureeGarantie && flammable==other.flammable && volume==other.volume && viscosite==other.viscosite && contenance==other.contenance && type==other.type && description==other.description);
+}
 
-
+liquide& liquide::operator=(const liquide& l){
+    if (this != &l) { 
+        referance = l.referance;
+        prix = l.prix;
+        dateFabrication = l.dateFabrication; 
+        dureeGarantie = l.dureeGarantie;
+        flammable = l.flammable;
+        volume = l.volume;
+        viscosite = l.viscosite;
+        contenance = l.contenance;
+        type = l.type;
+        description = l.description;
+    }
+    return *this;
+    
+}
 

@@ -1,10 +1,10 @@
-La referance est :F1626
-Le prix est :12
-La Date de Fabrication est :12/2/2023
+La referance est :f15161
+Le prix est :18
+La Date de Fabrication est :12/2/2002
 la duree de garantie est :80
 flammable=true
-volume=1
-viscosite=1
-contenance=1
-type=1
-Description:1
+volume=19
+viscosite=oui
+contenance=eau
+type=eau
+Description:eau

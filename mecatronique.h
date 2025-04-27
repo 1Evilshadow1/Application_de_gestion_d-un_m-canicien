@@ -16,6 +16,7 @@ class pieceMecatronique:  public pieceMecanique ,  public pieceElectronique{
         pieceMecatronique();
         void  Remise(float);
         void afficherMec();
+        pieceMecatronique(  pieceMecatronique& other);
         void ajouterPieceM(pieceMecatronique* );
         friend ostream& operator<<( ostream& out,pieceMecatronique& );
         friend istream& operator>>(istream& in , pieceMecatronique&);
