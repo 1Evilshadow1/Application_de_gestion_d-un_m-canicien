@@ -21,6 +21,7 @@ using namespace std;
 
 
 int main(){
+    
     cout<<"----------------------------------------------------Partie de Mohamed Aziz Taalouch------------------------------------------:"<<endl;
 
     // test de la classe date
@@ -150,10 +151,12 @@ int main(){
     c11.creerFichier("clients.txt");
     c11.enregistrerFichier("clients.txt");
     c11.afficherFichier("clients.txt");
-/*
+    
+
     cout<<"----------------------------------------------------Partie de Aziz Ben Othmane------------------------------------------:"<<endl;
     DATE d1,d2;
     int t,com;
+    /*
    
     cout<<"--------classe produit-------------------"<<endl;
     produit p1,p2;
@@ -163,6 +166,7 @@ int main(){
     cout<<"Nbr de produit est "<<com<<endl;
     cout<<p1;
     cout<<p2;
+    */
 
     cout<<"--------classe Liquide-------------------"<<endl;
     liquide l1,l2;
@@ -217,12 +221,13 @@ int main(){
     cout<<f2;
 
     delete pme,p,pi2,pMC;
-    
+    /*
     cout<<"-----Partie Fichier------"<<endl;
     cout<<"Classe Prouit"<<endl;
     p1.creerFichier("produit.txt");
     p1.enregistrerFichier("produit.txt");
     p1.afficherFichier("produit.txt");
+    */
 
     
     cout<<"Classe liquide"<<endl;
@@ -230,12 +235,12 @@ int main(){
     l1.enregisterFichierLiquide("liquide.txt");
     l1.afficherFichierLiquide("liquide.txt");
    
-*/
-    ClientEmployee ce1;
+
+    ClientEmployee ce5;
     cout << "Entrez les informations du client employe :" << endl;
-    cin >> ce1;
+    cin >> ce5;
     cout << "Informations du client employe saisi :" << endl;
-    cout << ce1;
+    cout << ce5;
     
 
     return 0;

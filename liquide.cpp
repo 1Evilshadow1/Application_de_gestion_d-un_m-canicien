@@ -17,14 +17,7 @@ liquide::liquide(string referance, double prix, DATE dateFabrication, int dureeG
     this->description=description;
 }
 
-void liquide:: afficherdetails(){
-    cout<<"Flammable="<<flammable<<endl;
-    cout<<"volume="<<volume<<endl;
-    cout<<"viscosite="<<viscosite<<endl;
-    cout<<"contenance="<<contenance<<endl;
-    cout<<"type="<<type<<endl;
-    cout<<"description:"<<description<<endl;
-}
+
 
 liquide::~liquide(){
 }
@@ -112,6 +105,10 @@ void liquide::afficherFichierLiquide(const string& f) {
     } catch (exception& e) {
         cout << "Exception: " << e.what() << endl;
     }
+}
+
+void liquide::Remise(float p){
+    prix=prix-(prix*p/100);
 }
        
 

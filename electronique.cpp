@@ -4,11 +4,21 @@
 #include<string>
 
 
+
+pieceElectronique::pieceElectronique(){
+    nbrP++;
+
+}
 pieceElectronique::pieceElectronique(string referance, double prix, DATE dateFabrication, int dureeGarantie, double tension, double courant, vector<string> compatibilite,int Nbr):produit(referance,prix,dateFabrication,dureeGarantie){
+    this->referance=referance;
+    this->prix=prix;
+    this->dateFabrication=dateFabrication;
+    this->dureeGarantie=dureeGarantie;
     this->tension=tension;
     this->courant=courant;
     this->compatibilite=compatibilite;
-    this->nbrP=Nbr;
+
+    
     
 }
 
@@ -42,3 +52,29 @@ void pieceElectronique::afficherPiece(){
     cout<<"courant:"<<courant<<endl;
 
 }
+
+ostream& operator<<(ostream& out,pieceElectronique& pe)  {
+    out<<static_cast<produit&>(pe);
+    out<<"Tension:"<<pe.tension<<endl;
+    out<<"courant:"<<pe.courant<<endl;
+
+    return out ;
+
+}
+
+
+istream& operator>>(istream& in,pieceElectronique& pe){
+    in>>static_cast<produit&>(pe);
+    cout<<"donner la tension "<<endl;
+    in>>pe.tension;
+    cout<<"donner le courant:"<<endl;
+    in>>pe.courant;
+    return in;
+
+
+}
+
+void pieceElectronique::Remise(float p){
+    prix=prix-(prix*p/100);
+}
+
