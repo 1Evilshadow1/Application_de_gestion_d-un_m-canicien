@@ -231,11 +231,11 @@ int main(){
     l1.afficherFichierLiquide("liquide.txt");
    
 */
-    ClientEmployee ce1;
+    ClientEmployee ce5;
     cout << "Entrez les informations du client employe :" << endl;
-    cin >> ce1;
+    cin >> ce5;
     cout << "Informations du client employe saisi :" << endl;
-    cout << ce1;
+    cout << ce5;
     
 
     return 0;
