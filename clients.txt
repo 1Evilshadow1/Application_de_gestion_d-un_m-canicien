@@ -1,27 +1,15 @@
-Taalouch
-Aziz
-29212588
+aziz
+taalouch
+22619908
 14432289
-aziztaalouch@gmail.com
+aziz@gmail.com
 1
 particulier
-1/1/2020
-3
-immatriculation: 4321
-marque: Renault
-modele: Clio
-date d'achat: 1/1/2021
-kilometrage: 5000
-
-immatriculation: 5678
-marque: Peugeot
-modele: 208
-date d'achat: 1/6/2021
-kilometrage: 8000
-
-immatriculation: 141
-marque: Peugeot
-modele: expert
-date d'achat: 1/6/2025
-kilometrage: 900000
+10/10/2022
+1
+immatriculation: 1590
+marque: ford
+modele: mustang
+date d'achat: 10/10/2010
+kilometrage: 150000
 

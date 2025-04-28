@@ -50,13 +50,16 @@ int main(){
         cin >> option;
 
         switch (option) {
+            case 0:
+                cout << "Quitter le programme..." << endl;
+            break;
             case 1: // Menu DATE
                 cout << "Test de la classe DATE" << endl;
                 int optionDate;
                 do {
                     cout << "Menu DATE:" << endl;
                     cout << "0. Retour au menu principal" << endl;
-                    cout << "1. Test simple de DATE" << endl;
+                    cout << "1. Test des methodes de la classe DATE" << endl;
                     cout << "Entrez votre choix: ";
                     cin >> optionDate;
                     DATE d1; 
@@ -81,15 +84,15 @@ int main(){
                             cout << "Choix invalide." << endl;
                     }
                 } while (optionDate != 0);
-                break; // Important : permet de sortir du switch principal
+                break; 
 
-            case 2: 
+            case 2: //menu vehicule
                 cout << "Test de la classe Vehicule" << endl;
                 int optionVehicule;
                 do {
                     cout << "Menu Vehicule:" << endl;
                     cout << "0. Retour au menu principal" << endl;
-                    cout << "1. Test simple de Vehicule" << endl;
+                    cout << "1. Test des methodes de la classe Vehicule" << endl;
                     cout << "Entrez votre choix: ";
                     cin >> optionVehicule;
                     vehicule v1;
@@ -135,23 +138,107 @@ int main(){
                             cout << "Choix invalide." << endl;
                     }
                 } while (optionVehicule != 0);
-                break; // Important : permet de sortir du switch principal
+                break; 
 
             case 3:
-                // Menu DATE
+                // Menu client
                 cout << "Test de la classe Client" << endl;
                 int optionClient;
                 do {
                     cout << "Menu Client:" << endl;
                     cout << "0. Retour au menu principal" << endl;
-                    cout << "1. Test simple de Client" << endl;
+                    cout << "1. Test des methodes de la classe Client" << endl;
+                    cout << "2. Test de la map" << endl;
+                    cout << "3. Test de la partie fichier + exception" << endl;
                     cout << "Entrez votre choix: ";
                     cin >> optionClient;
-                      
+                    Client c1;
+                    Client c2;  
+                    Client c3; 
+                    Client c4;
+                    vehicule v4;
+                    int tel;
+                    string email;
+                    string immatriculation;
+                    string cle;
+                    string valeur;
+                    string result;
                     switch (optionClient) {
                         case 1:
-              
+                                cout << "Execution du test de Client" << endl;
+                                cout<<"-------------------- Operateur istream >> Classe Client -------------------"<<endl;
+                                cout << "Entrez les informations du client c1:" << endl;
+                                cin >> c1;
+                                cout<<"-------------LA METHODE AFFICHER------------------" << endl;
+                                c1.afficher();
+                                cout<<"---------LA METHODE ajoutervehicule---------------"<<endl; 
+                                cout << "Entrez les informations du vehicule:" << endl;
+                                cin >> v4;
+                                c1.ajouterVehicule(new vehicule(v4));             
+                                cout<<c1<<endl;
+                                cout<<"---------LA METHODE deletevehicule----------------"<<endl;              
+                                cout << "Entrez l'immatriculation du vehicule a supprimer:" << endl;
+                                cin >> immatriculation;
+                                c1.deleteVehicule(immatriculation);
+                                cout<<c1<<endl;
+                                cout<<"---------LA METHODE modifier----------------"<<endl;
+                                cout << "Entrez le nouveau numero de telephone et email:" << endl;
+                                cin >> tel >> email;
+                                c1.modifier(tel, email);
+                                cout<<c1<<endl;
+                                cout<<"-------------------- Operateur d'affectation = Classe Client (c2=c1)-------------------"<<endl;
+                                c2=c1;  
+                                cout<<"-------------------- Operateur ostream << Classe Client -------------------"<<endl;
+                                cout<<c2<<endl;
+                                cout<<"-------------------- methode et attribut static -------------------"<<endl;
+                                cout<<"compteur client :"<<c1.getCompteurClient()<<endl;
+                            
+                                                        
+                             
                             break;
+                        case 2:
+                                cout << "-----------------test map-------------------------------<<" << endl;
+                                cout << "Entrez les informations du client c3:" << endl;
+                                cin >> c3;
+                                cout << "Donner la cle de la map: ";
+                                cin.ignore();
+                                getline(cin, cle);
+                                
+                                cout << "Donner la valeur de la map: ";
+                                getline(cin, valeur);
+                            
+                                cout << "-------------------- La methode ajouterInfo / obtenirInfo -------------------" << endl;
+                                c3.ajouterInfo(cle, valeur);
+                            
+                                cout << "Cle: " << cle << " - Valeur: " << c3.obtenirInfo(cle) << endl;
+                            
+                                cout << "-------------------- La methode supprimerInfo -------------------" << endl;
+                                cout << "Entrez la cle à supprimer: ";
+                                cin.ignore();
+                                getline(cin, cle); 
+
+                                c3.supprimerInfo(cle);
+
+                                result = c3.obtenirInfo(cle);
+                                if (result.empty()) {
+                                    cout << "Cle introuvable après suppression." << endl;
+                                } else {
+                                    cout << "Valeur associee à la cle: " << result << endl;
+                                }
+
+                        
+                            break;  
+                        case 3:
+                                cout<<"-------------------- Partie Fichier + Exception Classe Client -------------------"<<endl;
+                                cout << "Entrez les informations du client c4:" << endl;
+                                cin >> c4;
+                                cout<<"creation du fichier"<<endl;
+                                c4.creerFichier("clients.txt");
+                                cout<<"enregistrement dans le fichier"<<endl;
+                                c4.enregistrerFichier("clients.txt");
+                                cout<<"affichage depuis le fichier"<<endl;
+                                c4.afficherFichier("clients.txt");
+                            break; 
                         case 0:
                             cout << "Retour au menu principal..." << endl;
                             break;
@@ -159,19 +246,126 @@ int main(){
                             cout << "Choix invalide." << endl;
                     }
                 } while (optionClient != 0);
-                break; // Important : permet de sortir du switch principal
+                break; 
 
-            case 4:
+            case 4: //menu ouvrier mecanicien
                 cout << "Test de la classe OUVRIER MECANICIEN" << endl;
-                break;
 
-            case 5:
-                cout << "Test de la classe GESTIONNAIRE" << endl;
-                break;
+                 int optionOuvrierMecanicien;
+                 do {
+                     cout << "Menu Ouvrier Mecanicien:" << endl;
+                     cout << "0. Retour au menu principal" << endl;
+                     cout << "1. Test des methodes de la classe Ouvrier Mecanicien" << endl;
+                     cout << "Entrez votre choix: ";
+                     cin >> optionOuvrierMecanicien;
+                     OuvrierMecanicien om1;    
 
-            case 6:
-                cout << "Test de la classe CLIENT EMPLOYE" << endl;
-                break;
+                     switch (optionOuvrierMecanicien) {
+                         case 1:
+                                cout<<"-------------------- test de la classe Ouvriermecanicien -------------------"<<endl;
+                                cout<<"---------methode cin---------------"<<endl;              
+                                cin>>om1;
+                                cout<<"methode afficher"<<endl;
+                                om1.afficher();
+                                cout<<"---------LA METHODE augmentationsalaire---------------"<<endl;              
+
+                                om1.augmentationSalaire();
+                                cout<<"---------methode cout---------------"<<endl;
+                                cout<<om1<<endl;
+          
+                             break;
+                         case 0:
+                             cout << "Retour au menu principal..." << endl;
+                             break;
+                         default:
+                             cout << "Choix invalide." << endl;
+                     }
+                 } while (optionOuvrierMecanicien != 0);
+                 break; 
+
+            case 5: //menu gestionnaire
+            cout << "Test de la classe Gestionnaire" << endl;
+
+            int optionGestionnaire;
+            do {
+                cout << "Menu Gestionnaire:" << endl;
+                cout << "0. Retour au menu principal" << endl;
+                cout << "1. Test des methodes de la classe Gestionnaire" << endl;
+                cout << "Entrez votre choix: ";
+                cin >> optionGestionnaire;
+                Gestionnaire g1;
+                Gestionnaire g2;
+
+                switch (optionGestionnaire) {
+                    case 1:
+                            cout<<"-------------------- test de la classe Gestionnaire -------------------"<<endl;
+                            cout<<"---------methode cin---------------"<<endl;
+                            cin>>g1;
+                            cout<<"---------LA METHODE afficher ---------------"<<endl;
+                            g1.afficher();
+                            cout<<"---------LA METHODE augmentationsalaire---------------"<<endl;
+                            g1.augmentationSalaire();
+                            cout<<"---------methode cout---------------"<<endl;
+                            cout<<g1<<endl;
+     
+                        break;
+                    case 0:
+                        cout << "Retour au menu principal..." << endl;
+                        break;
+                    default:
+                        cout << "Choix invalide." << endl;
+                }
+            } while (optionGestionnaire != 0);
+            break; 
+
+            case 6://menu client employe
+            cout << "Test de la classe Client_Employe" << endl;
+
+            int optionClientEmploye;
+            do {
+                cout << "Menu Client_Employe:" << endl;
+                cout << "0. Retour au menu principal" << endl;
+                cout << "1. Test des methodes de la classe Client_Employe" << endl;
+                cout << "Entrez votre choix: ";
+                cin >> optionClientEmploye;
+                ClientEmployee ce1;
+                ClientEmployee ce5;
+                string avantage;
+
+                switch (optionClientEmploye) {
+                    case 1:
+                            cout<<"-------------------- test de la classe ClientEmployee -------------------"<<endl;
+                            cout<<"---------methode cin---------------"<<endl;
+                            cin>>ce1;
+                            cout<<"---------LA METHODE afficher---------------"<<endl;
+                            cout<<ce1<<endl;
+                            cout<<"---------LA METHODE augmentationSalaire ---------------"<<endl;
+                            ce1.augmentationSalaire();
+                            cout<<"---------methode cout---------------"<<endl;
+                            cout<<ce1<<endl;
+                            cout<<"---------LA METHODE afficherAvantages---------------"<<endl;
+                            ce1.afficherAvantages();
+                            cout<<"---------LA METHODE ajouterAvantages---------------"<<endl;
+                            cout << "Entrez le 1er avantage à ajouter: ";
+                            cin.ignore(); 
+                            getline(cin, avantage);
+                            ce1.ajouterAvantage(avantage);
+                            cout << "Entrez le 1er avantage à ajouter: ";
+                            getline(cin, avantage);
+                            ce1.ajouterAvantage(avantage);
+                            cout<<"---------LA METHODE ajouteravantages---------------"<<endl;
+                            ce1.afficherAvantages();
+            
+                        break;
+                    case 0:
+                        cout << "Retour au menu principal..." << endl;
+                        break;
+                    default:
+                        cout << "Choix invalide." << endl;
+                }
+            } while (optionClientEmploye != 0);
+            break; 
+
 
             case 7:
                 cout << "Test de la classe LIQUIDE" << endl;
