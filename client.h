@@ -4,6 +4,7 @@
 #include "personne.h"
 #include "vehicule.h"
 #include "date.h"
+#include <map>
 
 class Client: virtual public Personne{
     private:
@@ -12,6 +13,7 @@ class Client: virtual public Personne{
         DATE ddv;
         int nbrVehicules;
         vector<vehicule*> vehicules;
+        map<string, string> infosSupplementaires; //map
     public:
         Client(string nom, string prenom, int tel, int CIN, string email,int id, string type, DATE ddv,int nbrVehicules, vector<vehicule*> vehicules);
         Client();
@@ -21,7 +23,11 @@ class Client: virtual public Personne{
         void deleteVehicule(string immatriculation);
         void afficher();
         void modifier(int tel, string email);
-
+        //map
+        void ajouterInfo(const string& cle, const string& valeur);
+        void supprimerInfo(const string& cle);
+        string obtenirInfo(const string& cle) const;
+       //map
         int getnbrVehicules() const { return nbrVehicules; }
         const vector<vehicule*>& getVehicules() const { return vehicules; } 
 

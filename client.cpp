@@ -216,7 +216,23 @@ void Client::afficherFichier(const string& f) {
         cout << "Exception: " << e.what() << endl;
     }
 }
+//map
+void Client::ajouterInfo(const string& cle, const string& valeur) {
+    infosSupplementaires[cle] = valeur;
+}
 
+void Client::supprimerInfo(const string& cle) {
+    infosSupplementaires.erase(cle);
+}
+
+string Client::obtenirInfo(const string& cle) const {
+    auto it = infosSupplementaires.find(cle);
+    if (it != infosSupplementaires.end()) {
+        return it->second;
+    }
+    return ""; 
+}
+//map
 /*void Client::recuperer(const string& f, Client& c) {
     try {
         ifstream file(f, ios::in);

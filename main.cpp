@@ -26,7 +26,23 @@ int main(){
     
     
     cout<<"----------------------------------------------------Partie de Mohamed Aziz Taalouch------------------------------------------:"<<endl;
+   //test map
+    Client c("Taalouch", "Aziz", 29212588, 14432289, "aziztaalouch@gmail.com", 1, "particulier", DATE(1, 1, 2020), 0, {});
+    Client c1("Taalouch","Aziz",29212588,14432289,"aziztaalouch@gmail.com",1,"particulier",DATE(1, 1, 2020),2,vector<vehicule*>{
+        new vehicule("Renault", "Clio", DATE(1, 1, 2021), 5000, "4321"),
+        new vehicule("Peugeot", "208", DATE(1, 6, 2021), 8000, "5678")
+    });
+    c.ajouterInfo("preferences", "Notification par email");
+    c.ajouterInfo("Remarques", "Client interessé par les promotions");
+    c.ajouterInfo("Remarques", "Client fidèle depuis 5 ans");
+    cout << "Preferences : " << c.obtenirInfo("preferences") << endl;
+    cout << "Remarques : " << c.obtenirInfo("Remarques") << endl;
 
+    c1.ajouterInfo("Remarques", "il travail pendant les weekends");
+    cout << "Remarques : " << c1.obtenirInfo("Remarques") << endl;
+    cout << "preferences : " << c1.obtenirInfo("preferences") << endl;
+
+    /*
     // test de la classe date
     cout<<"-------------------- test de la classe date -------------------"<<endl;
     DATE d3; 
@@ -301,7 +317,7 @@ int main(){
 
 
 
-
+*/
     return 0;
 }
 
