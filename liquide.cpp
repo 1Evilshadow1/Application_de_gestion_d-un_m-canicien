@@ -139,11 +139,9 @@ liquide& liquide::operator=(const liquide& l){
     return *this;
     
 }
-
-/*void liquide::ajouterProp(string prop,int va){
-    propriete.insert(prop,va);
-
-
+void liquide::ajouterProp(string prop,int va){
+    propriete.insert(make_pair(prop,va));
 
 }
-*/
+
+
