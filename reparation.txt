@@ -1,18 +1,18 @@
-date:44/44/44
-client:nom: 44
-prenom: 44
-tel: 44
-CIN: 44
-email: 44
-id: 44
-type: 44
-date de derniere visite: 44/44/44
+date:12/2/2002
+client:nom: BENOTHMEN
+prenom: AZIZ
+tel: 23332343
+CIN: 23434344
+email: aziz
+id: 12323
+type: professionnel
+date de derniere visite: 12/2/2002
 nombre de vehicules: 0
 
-vehicule:immatriculation: 2
-marque: 1
-modele: 1
-date d'achat: 2/2/2
-kilometrage: 2
+vehicule:immatriculation: f145242
+marque: peugeot
+modele: 7
+date d'achat: 12/2/2002
+kilometrage: 187
 
-description:2
+description:aa

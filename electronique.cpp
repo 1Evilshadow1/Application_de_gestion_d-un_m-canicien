@@ -89,4 +89,3 @@ istream& operator>>(istream& in,pieceElectronique& pe){
 void pieceElectronique::Remise(float p){
     prix=prix-(prix*p/100);
 }
-

@@ -1,10 +1,10 @@
-La referance est :125
-Le prix est :17.6
-La Date de Fabrication est :22/22/22
-la duree de garantie est :22
+La referance est :F125252
+Le prix est :9
+La Date de Fabrication est :12/2/2002
+la duree de garantie est :89
 flammable=true
-volume=22
-viscosite=22
-contenance=22
-type=22
-Description:22
+volume=1890
+viscosite=forte
+contenance=eau
+type=eau
+Description:aa

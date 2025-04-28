@@ -240,6 +240,7 @@ string Client::obtenirInfo(const string& cle) const {
     }
     return ""; 
 }
+
 //map
 /*void Client::recuperer(const string& f, Client& c) {
     try {
