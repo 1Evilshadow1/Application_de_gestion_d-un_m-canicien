@@ -24,9 +24,194 @@ using namespace std;
 
 int main(){
     
-    
-    
-    
+    cout<<"----------------------------------------------------Menu------------------------------------------:"<<endl;
+    int option;
+
+
+    do {
+        cout << "Menu:" << endl;
+        cout << "0. Quitter" << endl;
+        cout << "-------------Partie de Mohamed Aziz Taalouch-------------:" << endl;
+        cout << "1. Test de la classe DATE" << endl;
+        cout << "2. Test de la classe VEHICULE" << endl;
+        cout << "3. Test de la classe CLIENT" << endl;
+        cout << "4. Test de la classe OUVRIER MECANICIEN" << endl;
+        cout << "5. Test de la classe GESTIONNAIRE" << endl;
+        cout << "6. Test de la classe CLIENT EMPLOYE" << endl;
+        cout << "-------------Partie de Aziz BenOthmen-------------:" << endl;
+        cout << "7. Test de la classe LIQUIDE" << endl;
+        cout << "8. Test de la classe PIECE MECANIQUE" << endl;
+        cout << "9. Test de la classe PIECE ELECTRONIQUE" << endl;
+        cout << "10. Test de la classe PIECE MECATRONIQUE" << endl;
+        cout << "11. Test de la classe FACTURE" << endl;
+        cout << "12. Test de la classe RENDEZ VOUS" << endl;
+        cout << "13. Test de la classe REPARATION" << endl;
+        cout << "Entrez votre choix: ";
+        cin >> option;
+
+        switch (option) {
+            case 1: // Menu DATE
+                cout << "Test de la classe DATE" << endl;
+                int optionDate;
+                do {
+                    cout << "Menu DATE:" << endl;
+                    cout << "0. Retour au menu principal" << endl;
+                    cout << "1. Test simple de DATE" << endl;
+                    cout << "Entrez votre choix: ";
+                    cin >> optionDate;
+                    DATE d1; 
+                    DATE d2;                       
+                    switch (optionDate) {
+                        case 1:
+                                cout << "Execution du test de DATE" << endl;
+                                cout << "-------LA METHODE CIN--------" << endl;
+                                cin>>d1;
+                                cout << "d1:"<<d1 << endl;
+                                cout << "-------LA METHODE AFFICHER--------" << endl;
+                                d1.afficher();     
+                                cout << "-------affectation par operateur = (d2=d1)-----------" << endl;                  
+                                d2=d1;                          
+                                cout << "-------LA METHODE COUT-----------" << endl;
+                                cout<<"d2: "<<d2<<endl;               
+                            break;
+                        case 0:
+                            cout << "Retour au menu principal..." << endl;
+                            break;
+                        default:
+                            cout << "Choix invalide." << endl;
+                    }
+                } while (optionDate != 0);
+                break; // Important : permet de sortir du switch principal
+
+            case 2: 
+                cout << "Test de la classe Vehicule" << endl;
+                int optionVehicule;
+                do {
+                    cout << "Menu Vehicule:" << endl;
+                    cout << "0. Retour au menu principal" << endl;
+                    cout << "1. Test simple de Vehicule" << endl;
+                    cout << "Entrez votre choix: ";
+                    cin >> optionVehicule;
+                    vehicule v1;
+                    vehicule v2;
+                    vehicule v3("Toyota", "Corolla", DATE(1,2,2023), 10000,"1234");
+                    //vehicule v3("Toyota", "LAND CRUISER", DATE(1,11,2013), 10040,"sdq");
+                    switch (optionVehicule) {
+                        case 1:
+                            cout << "Execution du test de Vehicule" << endl;
+                            cout<<"---------LA METHODE cin>>----------------"<<endl;
+                            cin>>v1;
+                            cout<<v1<<endl; 
+                            cout << "-------LA METHODE AFFICHER--------" << endl;
+                            v1.afficher();
+                            cout<<"---------LA METHODE getImmatriculation()---------------"<<endl;             
+                            cout<<v1.getImmatriculation()<<endl;                                   
+
+                            cout<<"---------LA METHODE modifierKilomertrage----------------"<<endl;  
+                            int km;
+                            cout << "Entrez le kilometrage: ";
+                            cin >> km;           
+                            v1.modifierKilometrage(km);           
+                            v1.afficher();       
+                            cout << "-------affectation par operateur = (v2=v1)-----------" << endl;                                                      
+                            v2=v1;                                                                                 
+                            cout<<"---------LA METHODE cout<<----------------"<<endl;              
+                            cout<<v1<<endl;  
+                            cout<<"faire le saisie d'une 3 eme vehicule :"<<endl;
+                            cin>>v3;
+                            cout<<v3<<endl; 
+                            cout<<"---------L'operateur de comparaison == ----------------"<<endl;                 
+                            if (v1 == v3) {
+                                cout << "v1 et v3 sont les memes" << endl;
+                            } else {
+                                cout << "v1 et v3 sont different" << endl;
+                            }
+                            break;
+
+                        case 0:
+                            cout << "Retour au menu principal..." << endl;
+                            break;
+                        default:
+                            cout << "Choix invalide." << endl;
+                    }
+                } while (optionVehicule != 0);
+                break; // Important : permet de sortir du switch principal
+
+            case 3:
+                // Menu DATE
+                cout << "Test de la classe Client" << endl;
+                int optionClient;
+                do {
+                    cout << "Menu Client:" << endl;
+                    cout << "0. Retour au menu principal" << endl;
+                    cout << "1. Test simple de Client" << endl;
+                    cout << "Entrez votre choix: ";
+                    cin >> optionClient;
+                      
+                    switch (optionClient) {
+                        case 1:
+              
+                            break;
+                        case 0:
+                            cout << "Retour au menu principal..." << endl;
+                            break;
+                        default:
+                            cout << "Choix invalide." << endl;
+                    }
+                } while (optionClient != 0);
+                break; // Important : permet de sortir du switch principal
+
+            case 4:
+                cout << "Test de la classe OUVRIER MECANICIEN" << endl;
+                break;
+
+            case 5:
+                cout << "Test de la classe GESTIONNAIRE" << endl;
+                break;
+
+            case 6:
+                cout << "Test de la classe CLIENT EMPLOYE" << endl;
+                break;
+
+            case 7:
+                cout << "Test de la classe LIQUIDE" << endl;
+                break;
+
+            case 8:
+                cout << "Test de la classe PIECE MECANIQUE" << endl;
+                break;
+
+            case 9:
+                cout << "Test de la classe PIECE ELECTRONIQUE" << endl;
+                break;
+
+            case 10:
+                cout << "Test de la classe PIECE MECATRONIQUE" << endl;
+                break;
+
+            case 11:
+                cout << "Test de la classe FACTURE" << endl;
+                break;
+
+            case 12:
+                cout << "Test de la classe RENDEZ VOUS" << endl;
+                break;
+
+            case 13:
+                cout << "Test de la classe REPARATION" << endl;
+                break;
+
+            default:
+                cout << "Choix invalide. Veuillez reessayer." << endl;
+        }
+    } while (option != 0);
+    cout<<"----------------------------------------------------Menu------------------------------------------:"<<endl;
+
+
+
+
+
+    /*
     cout<<"----------------------------------------------------Partie de Mohamed Aziz Taalouch------------------------------------------:"<<endl;
 
     
@@ -111,8 +296,8 @@ int main(){
 
     cout << "-----------------test map-------------------------------<<"<< endl;
     c3.ajouterInfo("preferences", "Notification par email");
-    c3.ajouterInfo("Remarques", "Client interessé par les promotions");
-    c3.ajouterInfo("Remarques", "Client fidèle depuis 5 ans");
+    c3.ajouterInfo("Remarques", "Client interesse par les promotions");
+    c3.ajouterInfo("Remarques", "Client fidele depuis 5 ans");
     cout << "Preferences : " << c3.obtenirInfo("preferences") << endl;
     cout << "Remarques : " << c3.obtenirInfo("Remarques") << endl;
 
@@ -269,7 +454,7 @@ int main(){
     cin>>pe;
     p= new pieceElectronique("PE127", 59.99, d2, 28, 8.0, 1.0, {"metal", "bois"},5);
     pi2= new pieceElectronique("PE129", 69.99, d2, 28, 8.0, 1.0, {"Silicium", "Or"},5);
-    pe1= new pieceElectronique("PE128", 89.99, d2, 28, 8.0, 1.0, {"Aluminium", "Céramique"},5);
+    pe1= new pieceElectronique("PE128", 89.99, d2, 28, 8.0, 1.0, {"Aluminium", "Ceramique"},5);
     cout<<pe;
     pe.ajouterPiece(p);
     pe.ajouterPiece(pi2);
@@ -342,7 +527,7 @@ int main(){
 
 
 
-
+*/
     return 0;
 }
 
