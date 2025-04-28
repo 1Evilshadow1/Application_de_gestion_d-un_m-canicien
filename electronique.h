@@ -12,7 +12,6 @@ class pieceElectronique : virtual public produit{
     private:
          double tension;
          double courant;
-         //vector<string> MatU;
          list<string> MatU;//Materiels Utlisés
          int nbrP;
          vector<pieceElectronique*> ensemble;

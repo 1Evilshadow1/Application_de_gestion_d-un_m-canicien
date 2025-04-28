@@ -23,4 +23,3 @@ class pieceMecatronique:  public pieceMecanique ,  public pieceElectronique{
         void afficherEnsemble();
         ~pieceMecatronique();
 };
-

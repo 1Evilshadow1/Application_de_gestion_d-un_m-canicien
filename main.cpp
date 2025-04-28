@@ -24,6 +24,7 @@ using namespace std;
 
 int main(){
     
+    
     cout<<"----------------------------------------------------Menu------------------------------------------:"<<endl;
     int option;
 
@@ -369,30 +370,290 @@ int main(){
 
             case 7:
                 cout << "Test de la classe LIQUIDE" << endl;
+                int optionLiquide;
+                do {
+                    cout << "Menu Liquide:" << endl;
+                    cout << "0. Retour au menu principal" << endl;
+                    cout << "1. Test simple de Liquide" << endl;
+                    cout << "Entrez votre choix: ";
+                    cin >> optionLiquide;
+                    liquide l1,l2,l3;  
+                    double rem;                     
+                    switch (optionLiquide) {
+                        case 1:
+                                cout << "Execution du test de DATE" << endl;
+                                cin>>l1;
+                                cout<<l1;
+                                cout<<"Nbr de Liquide est :"<<l1.getCompteur()<<endl;
+
+                                cout<<"---------------MAP Liquide----------------"<<endl;
+                                int comp;
+                                while(true){
+                                    string cle;
+                                    int val;
+                                    cout<<"fin pour arreter"<<endl;
+                                    cout<<"Propriete :"<<endl;
+                                    cin>>cle;
+                                    if(cle=="fin"){
+                                        break;
+                                    }
+                                    cout<<"donner Valeur"<<endl;
+                                    cin>>val;
+                                    l1.ajouterProp(cle,val);
+                                    comp++;
+                                   
+                                }
+                                for (const auto& paire : l1.getMap()) {
+                                    cout << "Cle: " << paire.first << ", Valeur : " << paire.second << endl;
+                                }
+                            
+                                cout<<"------------------Affectation = ----------------"<<endl;
+                                l3=l1;
+                                cout<<l3;
+                                cout<<"---------------Operation ===--------------------"<<endl;
+                                cin>>l2;
+                                cout<<l1;
+                                cout<<l2;
+                                
+                                if(l1==l2){
+                                    cout<<"C est le meme liquide"<<endl;
+                                }
+                                else{
+                                    cout<<"Deux liquide differents"<<endl;
+                                }
+                                cout<<"------Fonction Remise----------"<<endl;
+                                cout<<"le pourcentage de la remise est : "<<endl;
+                                cin>>rem;
+                                l1.Remise(rem);
+                                cout<<l1;
+                                cout<<"--------Fichier Liquide-----------"<<endl;
+
+                                l1.creerFichier("liquide.txt");
+                                l1.enregisterFichierLiquide("liquide.txt");
+                                l1.afficherFichierLiquide("liquide.txt");
+        
+                            break;
+                        case 0:
+                            cout << "Retour au menu principal..." << endl;
+                            break;
+                        default:
+                            cout << "Choix invalide." << endl;
+                    }
+                }while (optionLiquide != 0);
                 break;
 
             case 8:
                 cout << "Test de la classe PIECE MECANIQUE" << endl;
+                int optionMeca;
+                do {
+                    cout << "Menu Piece Mecanique:" << endl;
+                    cout << "0. Retour au menu principal" << endl;
+                    cout << "1. Test simple de Piece Mecanique" << endl;
+                    cout << "Entrez votre choix: ";
+                    cin >> optionMeca;
+                    pieceMecanique pm1,pm2;                    
+                    switch (optionMeca) {
+                        case 1: 
+                        double remC;
+                        cout<<"-------Saisie des pieces------------"<<endl;
+                        cin>>pm1;
+                        cin>>pm2;
+                        cout<<"-------affichage des pieces---------"<<endl;
+                        cout<<pm1;
+                        cout<<pm2;
+                        cout<<"-------Fonction Remise--------"<<endl;
+                        cout<<"Donner le pourcentage de la remise :"<<endl;
+                        cin>>remC;
+                        pm1.Remise(remC);
+                        cout<<"------Apres Remise----------"<<endl;
+                        cout<<pm1;        
+                            break;
+                        case 0:
+                            cout << "Retour au menu principal..." << endl;
+                            break;
+                        default:
+                            cout << "Choix invalide." << endl;
+                    }
+                } while (optionMeca != 0);
+              
                 break;
 
             case 9:
                 cout << "Test de la classe PIECE ELECTRONIQUE" << endl;
+                int optionELEC;
+                do {
+                    cout << "Menu PIECE ELECTRONIQUE:" << endl;
+                    cout << "0. Retour au menu principal" << endl;
+                    cout << "1. Test simple de PIECE ELECTRONIQUE" << endl;
+                    cout << "Entrez votre choix: ";
+                    cin >> optionELEC;
+                    pieceElectronique* p;
+                    pieceElectronique* pi2;
+                    pieceElectronique* pe1;
+                    pieceElectronique pe;
+                    p= new pieceElectronique("PE127", 59.99, DATE(12,02,2025), 28, 8.0, 1.0, {"metal", "bois"},5);
+                    pi2= new pieceElectronique("PE129", 69.99, DATE(12,02,2025), 28, 8.0, 1.0, {"Silicium", "Or"},5);
+                    pe1= new pieceElectronique("PE128", 89.99, DATE(12,02,2025), 28, 8.0, 1.0, {"Aluminium", "Ceramique"},5);
+                      
+                    switch (optionELEC) {
+                            
+                        case 1:
+
+                            cout<<"Saisie de Piece Elec"<<endl;
+                            cin>>pe;
+                            cout<<"----Affichage Piece Elec"<<endl; 
+                            cout<<pe;
+                            pe.ajouterPiece(p);
+                            pe.ajouterPiece(pi2);
+                            pe.ajouterPiece(pe1);
+                            pe.afficherEnsemble();
+                            break;
+                        case 0:
+                            cout << "Retour au menu principal..." << endl;
+                            break;
+                        default:
+                            cout << "Choix invalide." << endl;
+                    }
+                } while (optionELEC != 0);
+                break;
                 break;
 
             case 10:
                 cout << "Test de la classe PIECE MECATRONIQUE" << endl;
+                int optionMECATR;
+                do {
+                    cout << "Menu Piece Mecatronique:" << endl;
+                    cout << "0. Retour au menu principal" << endl;
+                    cout << "1. Test simple de MECATRONIQUE" << endl;
+                    cout << "Entrez votre choix: ";
+                    cin >> optionMECATR;
+                    pieceMecatronique* pme;
+                    pieceMecatronique* pMC;
+                    pieceMecatronique pmcA;
+                      
+                    switch (optionMECATR) {
+                        case 1: 
+                          
+                            cout<<"-----Saisie de la piece---------"<<endl;
+                            cin>>pmcA;
+                            cout<<"------Affichage de la piece-------------"<<endl;
+                            cout<<pmcA;
+                            pme = new pieceMecatronique("PM004", 299.99, {15, 4, 2023}, 36, 12.0, 3.0, {"Renault Clio", "Peugeot 208", "Volkswagen Golf"},5, "Haute", "Capteur", "Aluminium");
+                            pMC= new pieceMecatronique("PM001", 199.99, {15, 4, 2023}, 36, 12.0, 3.0, {"Renault Clio", "Peugeot 208", "Volkswagen Golf"},5, "Haute", "Capteur", "Aluminium");
+                            cout<<"-----AFFICHAGE PIECE---------"<<endl;
+                            pMC->afficherMec();
+                            pMC->ajouterPieceM(pMC);
+                            pMC->ajouterPieceM(pme);
+                            pMC->afficherEnsemble();
+                        case 0:
+                            cout << "Retour au menu principal..." << endl;
+                            break;
+                        default:
+                            cout << "Choix invalide." << endl;
+                    }
+                } while (optionMECATR!= 0);
                 break;
 
             case 11:
                 cout << "Test de la classe FACTURE" << endl;
+                int optionFACTURE;
+                do {
+                    cout << "Menu FACTURE:" << endl;
+                    cout << "0. Retour au menu principal" << endl;
+                    cout << "1. Test simple de FACTURE" << endl;
+                    cout << "Entrez votre choix: ";
+                    cin >> optionFACTURE;
+                    facture f,f1,f2;
+                    double t;
+                      
+                    switch (optionFACTURE) {
+                        case 1:
+              
+                            cout<<"-----Saisie de la facture---------"<<endl;
+                            cin>>f;
+                            cout<<"------cout de la facture-------------"<<endl;
+                            cout<<f; 
+                            cout<<"---------Saisie de la facture 1----------------"<<endl;
+                            cin>>f1;
+                            cout<<"------cout de la facture 1-------------"<<endl;
+                            cout<<f1;
+                            cout<<"donner le taux de Tax"<<endl;
+                            t=f.calculTax(20);
+                            cout<<"le Tax est "<<t<<endl;
+                            cout<<"---------OPERATEUR (+)----------------------------"<<endl;
+                            f2=f+f1;
+                            cout<<f2;
+                            break;
+                        case 0:
+                            cout << "Retour au menu principal..." << endl;
+                            break;
+                        default:
+                            cout << "Choix invalide." << endl;
+                    }
+                } while (optionFACTURE != 0);
                 break;
 
             case 12:
                 cout << "Test de la classe RENDEZ VOUS" << endl;
+                int optionR;
+                do {
+                    cout << "Menu RENDEZ-VOUS:" << endl;
+                    cout << "0. Retour au menu principal" << endl;
+                    cout << "1. Test simple de RENDEZ-VOUS" << endl;
+                    cout << "Entrez votre choix: ";
+                    cin >> optionR;
+                    rendezVous r;
+                      
+                    switch (optionR) {
+                        case 1:
+                            cout<<"---------Saisie du Rendez Vous----------"<<endl;
+                         
+                            cin>>r;
+                            cout<<"------Affichage du Rendez-VOUS---------------"<<endl;
+                            cout<<r;
+                            cout<<"-----------METHODE MODIFIER RV-----------------------"<<endl;
+                            r.modifierRV();
+                            cout<<"--------------Nouveau RV--------------"<<endl;
+                            cout<<r;
+                        case 0:
+                            cout << "Retour au menu principal..." << endl;
+                            break;
+                        default:
+                            cout << "Choix invalide." << endl;
+                    }
+                } while (optionR != 0);
                 break;
 
             case 13:
                 cout << "Test de la classe REPARATION" << endl;
+                int optionREP;
+                do {
+                    cout << "Menu REPARATION:" << endl;
+                    cout << "0. Retour au menu principal" << endl;
+                    cout << "1. Test simple du REPARATION" << endl;
+                    cout << "Entrez votre choix: ";
+                    cin >> optionREP;
+                    reparation r1;
+                      
+                    switch (optionREP) {
+                        case 1:
+                            cout<<"-------SAISIE DE REPARATION"<<endl;
+                            cin>>r1;
+                            cout<<"----------------AFFICHAGE DE REPARATION-------------"<<endl;
+                            cout<<r1;
+                            cout<<"-----------PARTIE FICHIER REPARATION----------------"<<endl;
+                            r1.creerFichier("reparation.txt");
+                            r1.enregistrerFichier("reparation.txt");
+                            r1.afficherFichier("reparation.txt");
+                            break;
+                            
+                        case 0:
+                            cout << "Retour au menu principal..." << endl;
+                            break;
+                        default:
+                            cout << "Choix invalide." << endl;
+                    }
+                } while (optionREP != 0);
                 break;
 
             default:
