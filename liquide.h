@@ -30,6 +30,8 @@ class liquide : public virtual produit{
         int getcompteurL(){return compteurL;};
         void ajouterProp(string,int);
         void afficherMap();
+        void supprimerLiquide(const string&);
+        int obtenirInfo(const string& cle);
         //Fonctions Fichier
         void creerFichier(const string& f);
         void enregisterFichierLiquide(const string& f) const;

@@ -144,4 +144,6 @@ void liquide::ajouterProp(string prop,int va){
 
 }
 
-
+void liquide::supprimerLiquide(const string& cle) {
+    propriete.erase(cle);
+}

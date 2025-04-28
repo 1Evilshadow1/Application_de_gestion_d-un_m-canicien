@@ -27,7 +27,9 @@ int main(){
     
     
     cout<<"----------------------------------------------------Partie de Mohamed Aziz Taalouch------------------------------------------:"<<endl;
-/*
+
+    
+   
     // test de la classe date
     cout<<"-------------------- test de la classe date -------------------"<<endl;
     DATE d3; 
@@ -74,7 +76,7 @@ int main(){
     } else {
         cout << "different" << endl;
     }
-*/
+
     //test de la classe Client/personne 
     cout<<"-------------------- test de la classe Client -------------------"<<endl;
     Client c1("Taalouch","Aziz",29212588,14432289,"aziztaalouch@gmail.com",1,"particulier",DATE(1, 1, 2020),2,vector<vehicule*>{
@@ -105,7 +107,17 @@ int main(){
     cout<<"-------------------- Operateur ostream << Classe Client -------------------"<<endl;
 
     cout << "Client saisie: " << c3 << endl;
-    
+
+    cout << "-----------------test map-------------------------------<<"<< endl;
+    c3.ajouterInfo("preferences", "Notification par email");
+    c3.ajouterInfo("Remarques", "Client interessé par les promotions");
+    c3.ajouterInfo("Remarques", "Client fidèle depuis 5 ans");
+    cout << "Preferences : " << c3.obtenirInfo("preferences") << endl;
+    cout << "Remarques : " << c3.obtenirInfo("Remarques") << endl;
+
+    c1.ajouterInfo("Remarques", "il travail pendant les weekends");
+    cout << "Remarques : " << c1.obtenirInfo("Remarques") << endl;
+    cout << "preferences : " << c1.obtenirInfo("preferences") << endl;
 
     //test de la classe Ouvriermecanicien/employe 
     cout<<"-------------------- test de la classe Ouvriermecanicien -------------------"<<endl;
@@ -170,7 +182,7 @@ int main(){
     c11.enregistrerFichier("clients.txt");
     c11.afficherFichier("clients.txt");
     
-    /*
+    
  
     cout<<"----------------------------------------------------Partie de Aziz Ben Othmane------------------------------------------:"<<endl;
     DATE d1,d2;
@@ -303,7 +315,7 @@ int main(){
     r1.afficherFichier("reparation.txt");
     
 
-*/
+
 
 
     return 0;
