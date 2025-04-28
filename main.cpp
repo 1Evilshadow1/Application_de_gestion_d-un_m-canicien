@@ -25,24 +25,11 @@ using namespace std;
 int main(){
     
     
+    
     cout<<"----------------------------------------------------Partie de Mohamed Aziz Taalouch------------------------------------------:"<<endl;
-   //test map
-    Client c("Taalouch", "Aziz", 29212588, 14432289, "aziztaalouch@gmail.com", 1, "particulier", DATE(1, 1, 2020), 0, {});
-    Client c1("Taalouch","Aziz",29212588,14432289,"aziztaalouch@gmail.com",1,"particulier",DATE(1, 1, 2020),2,vector<vehicule*>{
-        new vehicule("Renault", "Clio", DATE(1, 1, 2021), 5000, "4321"),
-        new vehicule("Peugeot", "208", DATE(1, 6, 2021), 8000, "5678")
-    });
-    c.ajouterInfo("preferences", "Notification par email");
-    c.ajouterInfo("Remarques", "Client interessé par les promotions");
-    c.ajouterInfo("Remarques", "Client fidèle depuis 5 ans");
-    cout << "Preferences : " << c.obtenirInfo("preferences") << endl;
-    cout << "Remarques : " << c.obtenirInfo("Remarques") << endl;
 
-    c1.ajouterInfo("Remarques", "il travail pendant les weekends");
-    cout << "Remarques : " << c1.obtenirInfo("Remarques") << endl;
-    cout << "preferences : " << c1.obtenirInfo("preferences") << endl;
-
-    /*
+    
+   
     // test de la classe date
     cout<<"-------------------- test de la classe date -------------------"<<endl;
     DATE d3; 
@@ -108,6 +95,7 @@ int main(){
     c1.modifier(58605362,"mohamedaziz.taalouch@enicar.ucar.tn");
     cout<<"---------------LA METHODE modifier----------------"<<endl;              
     cout<<c1<<endl;
+    cout<<"compteur client :"<<c1.getCompteurClient()<<endl;
 
     Client c3=c1; 
     cout<<"-------------------- Operateur d'affectation = Classe Client -------------------"<<endl;
@@ -119,7 +107,17 @@ int main(){
     cout<<"-------------------- Operateur ostream << Classe Client -------------------"<<endl;
 
     cout << "Client saisie: " << c3 << endl;
-    
+
+    cout << "-----------------test map-------------------------------<<"<< endl;
+    c3.ajouterInfo("preferences", "Notification par email");
+    c3.ajouterInfo("Remarques", "Client interessé par les promotions");
+    c3.ajouterInfo("Remarques", "Client fidèle depuis 5 ans");
+    cout << "Preferences : " << c3.obtenirInfo("preferences") << endl;
+    cout << "Remarques : " << c3.obtenirInfo("Remarques") << endl;
+
+    c1.ajouterInfo("Remarques", "il travail pendant les weekends");
+    cout << "Remarques : " << c1.obtenirInfo("Remarques") << endl;
+    cout << "preferences : " << c1.obtenirInfo("preferences") << endl;
 
     //test de la classe Ouvriermecanicien/employe 
     cout<<"-------------------- test de la classe Ouvriermecanicien -------------------"<<endl;
@@ -184,6 +182,7 @@ int main(){
     c11.enregistrerFichier("clients.txt");
     c11.afficherFichier("clients.txt");
     
+    
  
     cout<<"----------------------------------------------------Partie de Aziz Ben Othmane------------------------------------------:"<<endl;
     DATE d1,d2;
@@ -194,6 +193,7 @@ int main(){
     double rem;
     cin>>l1;
     cout<<l1;
+    cout<<"Nbr de Liquide est :"<<l1.getCompteur()<<endl;
 
     cout<<"------------------Affectation = ----------------"<<endl;
     l3=l1;
@@ -317,7 +317,7 @@ int main(){
 
 
 
-*/
+
     return 0;
 }
 

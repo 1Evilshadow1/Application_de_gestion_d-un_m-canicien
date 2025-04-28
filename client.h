@@ -14,6 +14,7 @@ class Client: virtual public Personne{
         int nbrVehicules;
         vector<vehicule*> vehicules;
         map<string, string> infosSupplementaires; //map
+        static int CompteurClient;
     public:
         Client(string nom, string prenom, int tel, int CIN, string email,int id, string type, DATE ddv,int nbrVehicules, vector<vehicule*> vehicules);
         Client();
@@ -29,6 +30,7 @@ class Client: virtual public Personne{
         string obtenirInfo(const string& cle) const;
        //map
         int getnbrVehicules() const { return nbrVehicules; }
+        static int getCompteurClient() {return CompteurClient;};
         const vector<vehicule*>& getVehicules() const { return vehicules; } 
 
         Client operator+(const Client& other); 
