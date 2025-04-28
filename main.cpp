@@ -25,8 +25,9 @@ using namespace std;
 int main(){
     
     
+    
     cout<<"----------------------------------------------------Partie de Mohamed Aziz Taalouch------------------------------------------:"<<endl;
-
+/*
     // test de la classe date
     cout<<"-------------------- test de la classe date -------------------"<<endl;
     DATE d3; 
@@ -73,7 +74,7 @@ int main(){
     } else {
         cout << "different" << endl;
     }
-
+*/
     //test de la classe Client/personne 
     cout<<"-------------------- test de la classe Client -------------------"<<endl;
     Client c1("Taalouch","Aziz",29212588,14432289,"aziztaalouch@gmail.com",1,"particulier",DATE(1, 1, 2020),2,vector<vehicule*>{
@@ -92,6 +93,7 @@ int main(){
     c1.modifier(58605362,"mohamedaziz.taalouch@enicar.ucar.tn");
     cout<<"---------------LA METHODE modifier----------------"<<endl;              
     cout<<c1<<endl;
+    cout<<"compteur client :"<<c1.getCompteurClient()<<endl;
 
     Client c3=c1; 
     cout<<"-------------------- Operateur d'affectation = Classe Client -------------------"<<endl;
@@ -168,6 +170,7 @@ int main(){
     c11.enregistrerFichier("clients.txt");
     c11.afficherFichier("clients.txt");
     
+    /*
  
     cout<<"----------------------------------------------------Partie de Aziz Ben Othmane------------------------------------------:"<<endl;
     DATE d1,d2;
@@ -178,6 +181,7 @@ int main(){
     double rem;
     cin>>l1;
     cout<<l1;
+    cout<<"Nbr de Liquide est :"<<l1.getCompteur()<<endl;
 
     cout<<"------------------Affectation = ----------------"<<endl;
     l3=l1;
@@ -299,7 +303,7 @@ int main(){
     r1.afficherFichier("reparation.txt");
     
 
-
+*/
 
 
     return 0;

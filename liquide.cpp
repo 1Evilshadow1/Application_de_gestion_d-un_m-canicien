@@ -7,6 +7,8 @@ using namespace std;
 
 
 liquide::liquide(){  
+    compteurL++;
+
 }
 liquide::liquide(string referance, double prix, DATE dateFabrication, int dureeGarantie, string flammable, float volume, string viscosite, string contenance, string type, string description): produit(referance,prix,dateFabrication,dureeGarantie){
     this->flammable=flammable;
@@ -15,7 +17,10 @@ liquide::liquide(string referance, double prix, DATE dateFabrication, int dureeG
     this->contenance=contenance;
     this->type=type;
     this->description=description;
+
+    compteurL++;
 }
+int liquide::compteurL=0;
 
 
 
@@ -135,3 +140,10 @@ liquide& liquide::operator=(const liquide& l){
     
 }
 
+/*void liquide::ajouterProp(string prop,int va){
+    propriete.insert(prop,va);
+
+
+
+}
+*/

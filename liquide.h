@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 #include"produit.h"
+#include <map>
+
 using namespace std;
 #pragma once
 
@@ -15,6 +17,8 @@ class liquide : public virtual produit{
         string contenance;
         string type;
         string description;
+        static int compteurL;
+        //map<string,int> propriete;//<propriete:valeur>
     public:
         liquide(string referance, double prix, DATE dateFabrication, int dureeGarantie, string flammable, float volume, string viscosite, string contenance, string type, string description);
         liquide();
@@ -23,9 +27,12 @@ class liquide : public virtual produit{
         friend ostream& operator<<(ostream& out,liquide&);
         bool operator==(const liquide& other) const;
         liquide& operator=(const liquide& v);
+        int getcompteurL(){return compteurL;};
+        void ajouterProp(string,int);
         //Fonctions Fichier
         void creerFichier(const string& f);
         void enregisterFichierLiquide(const string& f) const;
         void afficherFichierLiquide(const string& f);
+
         ~liquide();
 };

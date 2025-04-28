@@ -12,6 +12,7 @@ class Client: virtual public Personne{
         DATE ddv;
         int nbrVehicules;
         vector<vehicule*> vehicules;
+        static int CompteurClient;
     public:
         Client(string nom, string prenom, int tel, int CIN, string email,int id, string type, DATE ddv,int nbrVehicules, vector<vehicule*> vehicules);
         Client();
@@ -23,6 +24,7 @@ class Client: virtual public Personne{
         void modifier(int tel, string email);
 
         int getnbrVehicules() const { return nbrVehicules; }
+        static int getCompteurClient() {return CompteurClient;};
         const vector<vehicule*>& getVehicules() const { return vehicules; } 
 
         Client operator+(const Client& other); 

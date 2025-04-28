@@ -9,6 +9,7 @@ Client::Client(string n, string p, int t, int c, string e,int i, string ty, DATE
     ddv=d;
     nbrVehicules=nbrV;
     vehicules=v;
+    CompteurClient++;
 }
 
 Client::Client(){
@@ -16,6 +17,8 @@ Client::Client(){
     type="";
     ddv=DATE(0,0,0);
     nbrVehicules=0;
+    CompteurClient++;
+
 }
 
 Client::Client(const Client& other): Personne(other.nom, other.prenom, other.tel, other.CIN, other.email){
@@ -26,7 +29,11 @@ Client::Client(const Client& other): Personne(other.nom, other.prenom, other.tel
     for (int i=0; i<other.nbrVehicules; i++){
         vehicules.push_back(new vehicule(*other.vehicules[i])); 
     }
+    CompteurClient++;
+
 }
+
+int Client::CompteurClient=0;
 
 Client Client::operator+(const Client& other) {
     Client result(*this);
