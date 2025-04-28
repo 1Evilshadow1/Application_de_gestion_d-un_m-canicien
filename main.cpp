@@ -25,8 +25,6 @@ using namespace std;
 int main(){
     
     
-    
-    
     cout<<"----------------------------------------------------Partie de Mohamed Aziz Taalouch------------------------------------------:"<<endl;
 
     
