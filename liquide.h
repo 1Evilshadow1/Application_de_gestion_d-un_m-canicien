@@ -31,7 +31,9 @@ class liquide : public virtual produit{
         void ajouterProp(string,int);
         void afficherMap();
         void supprimerLiquide(const string&);
-        int obtenirInfo(const string& cle);
+        int obtenirInfo(const string& cle) const;
+        map<string,int> getMap(){return propriete;};
+
         //Fonctions Fichier
         void creerFichier(const string& f);
         void enregisterFichierLiquide(const string& f) const;

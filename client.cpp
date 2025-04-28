@@ -233,7 +233,8 @@ void Client::supprimerInfo(const string& cle) {
 }
 
 string Client::obtenirInfo(const string& cle) const {
-    auto it = infosSupplementaires.find(cle);
+    map<string, string>::const_iterator it;
+    it = infosSupplementaires.find(cle);
     if (it != infosSupplementaires.end()) {
         return it->second;
     }

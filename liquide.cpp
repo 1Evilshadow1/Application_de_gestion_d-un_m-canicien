@@ -147,3 +147,11 @@ void liquide::ajouterProp(string prop,int va){
 void liquide::supprimerLiquide(const string& cle) {
     propriete.erase(cle);
 }
+int liquide::obtenirInfo(const string& cle) const {
+    map<string, int>::const_iterator it;
+    it = propriete.find(cle);
+    if (it != propriete.end()) {
+        return it->second;
+    }
+    return 0; 
+}

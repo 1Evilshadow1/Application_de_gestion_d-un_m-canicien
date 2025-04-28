@@ -26,6 +26,7 @@ int main(){
     
     
     
+    
     cout<<"----------------------------------------------------Partie de Mohamed Aziz Taalouch------------------------------------------:"<<endl;
 
     
@@ -194,6 +195,30 @@ int main(){
     cin>>l1;
     cout<<l1;
     cout<<"Nbr de Liquide est :"<<l1.getCompteur()<<endl;
+
+    cout<<"---------------MAP Liquide----------------"<<endl;
+    int comp;
+    while(true){
+        string cle;
+        int val;
+        cout<<"fin pour arreter"<<endl;
+        cout<<"Propriete :"<<endl;
+        cin>>cle;
+        if(cle=="fin"){
+            break;
+        }
+        cout<<"donner Valeur"<<endl;
+        cin>>val;
+        l1.ajouterProp(cle,val);
+        comp++;
+       
+    }
+    for (const auto& paire : l1.getMap()) {
+        cout << "Cle: " << paire.first << ", Valeur : " << paire.second << endl;
+    }
+
+
+
 
     cout<<"------------------Affectation = ----------------"<<endl;
     l3=l1;
